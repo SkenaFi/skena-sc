@@ -1,0 +1,128 @@
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.22;
+
+contract Helper {
+    // ***** MAINNET *****
+    address public HBAR_LZ_ENDPOINT = 0x3A73033C0b1407574C76BdBAc67f126f6b4a9AA9;
+    address public BASE_LZ_ENDPOINT = 0x1a44076050125825900e736c501f859c50fE728c;
+    address public ARB_LZ_ENDPOINT = 0x1a44076050125825900e736c501f859c50fE728c;
+
+    address public HBAR_SEND_LIB = 0x2367325334447C5E1E0f1b3a6fB947b262F58312;
+    address public BASE_SEND_LIB = 0xB5320B0B3a13cC860893E2Bd79FCd7e13484Dda2;
+    address public ARB_SEND_LIB = 0x975bcD720be66659e3EB3C0e4F1866a3020E493A;
+
+    address public HBAR_RECEIVE_LIB = 0xc1B621b18187F74c8F6D52a6F709Dd2780C09821;
+    address public BASE_RECEIVE_LIB = 0xc70AB6f32772f59fBfc23889Caf4Ba3376C84bAf;
+    address public ARB_RECEIVE_LIB = 0x7B9E184e07a6EE1aC23eAe0fe8D6Be2f663f05e6;
+
+    uint32 public HBAR_EID = 30316;
+    uint32 public BASE_EID = 30184;
+    uint32 public ARB_EID = 30110;
+
+    address public HBAR_DVN1 = 0x4b92BC2A7d681bf5230472C80d92aCFE9A6b9435; // Canary
+    address public HBAR_DVN2 = 0xd0f50363E1aE33feAC8e0E067e42d0070C394525; // Horizen
+    address public HBAR_DVN3 = 0xce8358bc28dd8296Ce8cAF1CD2b44787abd65887; // LayerZeroLabs
+
+    address public BASE_DVN1 = 0x554833698Ae0FB22ECC90B01222903fD62CA4B47; // Canary
+    address public BASE_DVN2 = 0xa7b5189bcA84Cd304D8553977c7C614329750d99; // Horizen
+    address public BASE_DVN3 = 0x9e059a54699a285714207b43B055483E78FAac25; // LayerZeroLabs
+
+    address public ARB_DVN1 = 0x19670Df5E16bEa2ba9b9e68b48C054C5bAEa06B8; // Horizen
+    address public ARB_DVN2 = 0xf2E380c90e6c09721297526dbC74f870e114dfCb; // Canary
+    address public ARB_DVN3 = 0x2f55C492897526677C5B68fb199ea31E2c126416; // LayerZeroLabs
+
+    address public HBAR_EXECUTOR = 0xa20DB4Ffe74A31D17fc24BD32a7DD7555441058e;
+    address public BASE_EXECUTOR = 0x2CCA08ae69E0C44b18a57Ab2A87644234dAebaE4;
+    address public ARB_EXECUTOR = 0x31CAe3B7fB82d847621859fb1585353c5720660D;
+
+    address public ARB_USDT = 0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9;
+    address public ARB_USDC = 0xaf88d065e77c8cC2239327C5EDb3A432268e5831;
+    address public ARB_ETH = address(1);
+    address public ARB_WETH = 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1;
+    address public ARB_WBTC = 0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f;
+
+    address public ARB_USDCK = 0x7B3C20D2B3F8C205f624e62D356354Ed1Ae9F64b;
+    address public ARB_USDTK = 0xC746B3AaB0C6Da075C9b7b43CEebd437Ef759D5b;
+    address public ARB_WBTCK = 0x1fEAD2bdAaEbb03C2739949EA3B2145f064378F0;
+    address public ARB_WETHK = 0x6Ce216ec20272C69a8f3fD8bC8d13d770651FA56;
+    address public ARB_MOCK_USDCK = 0xBdC661EECb0dcFB940A34008e0190c9103013C41;
+    address public ARB_MOCK_USDTK = 0xeA25630BF89a0fF560308E7D12920695A586b0A2;
+    address public ARB_MOCK_WETHK = 0xb516190F8192CCEaF8B1DA7D9Ca1C6C75b9F410c;
+
+    address public BASE_USDC = 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913;
+    address public BASE_USDT = 0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2;
+    address public BASE_ETH = address(1);
+    address public BASE_WETH = 0x4200000000000000000000000000000000000006;
+    address public BASE_WBTC = 0x0555E30da8f98308EdB960aa94C0Db47230d2B9c;
+
+    address public HBAR_USDC = 0x000000000000000000000000000000000097a8a3;
+    address public HBAR_USDT = 0x000000000000000000000000000000000097a8a3;
+    address public HBAR_HBAR = address(1);
+    address public HBAR_WHBAR = 0xb1F616b8134F602c3Bb465fB5b5e6565cCAd37Ed;
+    address public HBAR_WBTC = 0x0000000000000000000000000000000000101aFb;
+
+    // ** SELF DEPLOYED Mainnet **
+    // *******************
+    address public BASE_OFT_USDT_ADAPTER = 0x90a07246df6cc23C26343Fc4595aC71e834dcfd3;
+    address public BASE_OFT_USDC_ADAPTER = 0x4DbfE8f6a12E3538e4F2B3712ec81cD7A161e3bd;
+    address public BASE_OFT_WBTC_ADAPTER = 0x7bFA71D5f8A3BfA35384E14863E299Ef20B2652a;
+    address public BASE_OFT_WETH_ADAPTER = 0x08F17aC3389f8A719602681747F668fa4EFdBbAb;
+    address public BASE_OFT_MOCK_USDT_ADAPTER = 0x5Bf04cc43cd55167eB0FEF1cD6Cd15Da48C52490;
+    address public BASE_OFT_MOCK_USDC_ADAPTER = 0xc336A7d6Ff896DA5E40D91e14e6c916cabE6263f;
+    address public BASE_OFT_MOCK_WETH_ADAPTER = 0xe4e5cd067E0E4F776aAcf6C008140B65EFD4D7ca;
+
+    address public ARB_OFT_USDCK_ADAPTER = 0xeBb7a56fd2D0231A9BF7240542cbD09a641a29Fc;
+    address public ARB_OFT_USDTK_ADAPTER = 0x67165C24A886AAAf1bFA81934e44a2063c6B608C;
+    address public ARB_OFT_WBTCK_ADAPTER = 0xA85C480f229FAC050ecc53FAedE343628bC242cb;
+    address public ARB_OFT_WETHK_ADAPTER = 0xEb36AA674745c48381AA3A8074E5485586dBD308;
+    address public ARB_OFT_MOCK_USDCK_ADAPTER = 0x02a66B51Fc24E08535a6Cfe1e11E532D8A089212;
+    address public ARB_OFT_MOCK_USDTK_ADAPTER = 0xd506b22a6b3216b736021FA262D0F5D686e07b35;
+    address public ARB_OFT_MOCK_WETHK_ADAPTER = 0xc3be8ab4CA0cefE3119A765b324bBDF54a16A65b;
+
+    address public ARB_USDCK_ELEVATED_MINTER_BURNER = 0x10FD0d8280E94D0DbC3013b778Ef26d47105Ea7b;
+    address public ARB_USDTK_ELEVATED_MINTER_BURNER = 0x9F3d0BeaFAD726bcFD3799F2B7B42eAB889ac333;
+    address public ARB_WBTCK_ELEVATED_MINTER_BURNER = 0x27EEDa6B30dfce416D5de397C78f1e3C87e557bb;
+    address public ARB_WETHK_ELEVATED_MINTER_BURNER = 0x5cF7Bb8568491Bb50a1941994Fd3Da4AdF34FE28;
+    address public ARB_MOCK_USDCK_ELEVATED_MINTER_BURNER = 0x31fC86E13108A098830eea63A8A9f6d80DfC89Aa;
+    address public ARB_MOCK_USDTK_ELEVATED_MINTER_BURNER = 0x53D7f02e72d62f7b7B41F6B622A7d79694BED966;
+    address public ARB_MOCK_WETHK_ELEVATED_MINTER_BURNER = 0x33FaBa0e0cE340AfC4fb03038151FF7EE1d5f95b;
+
+    address public ARB_oappSupplyLiquidityUSDT;
+    address public BASE_oappSupplyLiquidityUSDT;
+
+    address public ARB_oappAdapter;
+    address public BASE_oappAdapter;
+    // *******************
+
+    // *******************
+    // chainlink
+    address public usdt_usd = 0x8F4978D9e5eA44bF915611b73f45003c61f1BC79;
+    address public usdc_usd = 0x2b358642c7C37b6e400911e4FE41770424a7349F;
+    address public eth_usd = 0xd2D2CB0AEb29472C3008E291355757AD6225019e;
+    address public btc_usd = 0xaD01E27668658Cc8c1Ce6Ed31503D75F31eEf480;
+
+    // address public usdt_usd = 0xf19d560eB8d2ADf07BD6D13ed03e1D11215721F9;
+    // address public usdc_usd = 0x7e860098F58bBFC8648a4311b374B1D669a2bc6B;
+    // address public eth_usd = 0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70;
+    // address public btc_usd = 0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F;
+    // *******************
+
+    address public BASE_usdc_usd_adapter = 0xEf209d39e91Dbf1a3820228f43c72b5e0676E5a2;
+    address public BASE_usdt_usd_adapter = 0xc2995dFc3201f7da467e39851b8EB0c6CbafD5F1;
+    address public BASE_eth_usd_adapter = 0x730a64434a8ebd39a2057e2AbeBcC7B0E0d9814A;
+    address public BASE_btc_usd_adapter = 0x250fE31e431D620D3db1CA6daeA17A5eeF6B300e;
+
+    address public BASE_MOCK_USDC = 0xD2E0F459A2518b9459B9b11dB5Aa014F0BF622A7;
+    address public BASE_MOCK_USDT = 0xd61F31154bF292c7bE2fD81fAc9810f6d93Ecc2B;
+    address public BASE_MOCK_WETH = 0x7954270F038BFaE7760cCF8D9094745d3E9cf4A3;
+
+    address public BASE_liquidator = 0x9bB9d97a559A77aF293B94B90CC1452Cf25723dC;
+    address public BASE_isHealthy = 0x815a64d69d41495B73f054f1335b8F3244018684;
+    address public BASE_lendingPoolDeployer = 0x5A2A7827640dF1e6210AD6E0D96DA18aeC65a82c;
+    address public BASE_lendingPoolRouterDeployer = 0x8E52F9Ed7D5B1c0F54810858c5Efbe7E736Dd428;
+    address public BASE_protocol = 0x897A3Fa747c4398e1d74ffc5002eea069A6B95eC;
+    address public BASE_positionDeployer = 0x0e9C13fc2F6D74e6eDb48c6E9821e502446E155a;
+    address public BASE_lendingPoolFactoryImplementation = 0x3dDF6e1A3cc940752dDA356Ce37826ceE2561818;
+    address public BASE_lendingPoolFactoryProxy = 0x42C5dFc5899160e9c4e2E139AfFe7472dDf4D86E;
+    address public BASE_HELPER_UTILS = 0xad15249b77d9Bf9a02401b8122FC763fD7391329;
+}

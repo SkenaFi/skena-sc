@@ -2,5 +2,24 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+remappings = [
+    '@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/',
+    '@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/',
+    '@layerzerolabs/lz-evm-messagelib-v2/=lib/layerzero-v2/packages/layerzero-v2/evm/messagelib',
+    '@layerzerolabs/lz-evm-protocol-v2/=lib/layerzero-v2/packages/layerzero-v2/evm/protocol',
+    '@layerzero-v2/=lib/LayerZero-v2/packages/layerzero-v2/',
+    '@layerzerolabs/oft-evm/=lib/devtools/packages/oft-evm/',
+    '@layerzerolabs/oapp-evm/=lib/devtools/packages/oapp-evm/',
+    '@layerzero-devtools/=lib/devtools/packages/',
+    'solidity-bytes-utils/=lib/solidity-bytes-utils/',
+    'forge-std/=lib/forge-std/src/'
+]
 
+[lint]
+exclude_lints = ["mixed-case-variable", "mixed-case-function", "unsafe-typecast"]
+
+[rpc_endpoints]
+hedera_mainnet="${HEDERA_MAINNET_RPC}"
+base_mainnet="${BASE_MAINNET_RPC}"
+arb_mainnet="${ARB_MAINNET_RPC}"
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
