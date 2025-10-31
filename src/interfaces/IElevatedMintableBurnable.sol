@@ -3,7 +3,7 @@ pragma solidity ^0.8.22;
 
 /**
  * @title IElevatedMintableBurnable
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Interface for tokens with elevated mint/burn permissions
  * @dev Used by cross-chain bridge operators that require mint/burn with return values
  */

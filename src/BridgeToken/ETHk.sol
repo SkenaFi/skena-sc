@@ -6,7 +6,7 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title ETHk
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Bridge token representing ETH on non-native chains
  * @dev ERC20 token with mint/burn functionality for cross-chain operations
  * Uses 18 decimals to match ETH standard

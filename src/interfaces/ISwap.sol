@@ -3,8 +3,8 @@ pragma solidity ^0.8.20;
 
 /**
  * @title ISwap
- * @author Senja Protocol
- * @notice Interface for UniSwap V3 Router token swapping
+ * @author Skena Protocol
+ * @notice Interface for SaucerSwap V1 Router token swapping
  * @dev Provides single-hop token swap functionality
  */
 interface ISwap {

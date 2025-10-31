@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 /**
  * @title IOrakl
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Interface for Orakl Network price oracle
  * @dev Provides price feed data with different return format than Chainlink
  */

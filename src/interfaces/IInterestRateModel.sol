@@ -5,7 +5,7 @@ pragma solidity ^0.8.13;
  * @title IInterestRateModel
  * @dev Interface for dynamic interest rate calculation
  * @notice This interface defines the contract for calculating dynamic interest rates based on utilization
- * @author Senja Team
+ * @author Skena Team
  */
 interface IInterestRateModel {
     /**

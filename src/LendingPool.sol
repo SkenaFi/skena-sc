@@ -18,7 +18,7 @@ import {ILiquidator} from "./interfaces/ILiquidator.sol";
 
 /**
  * @title LendingPool
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Main lending pool contract that handles user interactions for supplying liquidity, collateral, borrowing and repayment
  * @dev This contract acts as the interface layer for users to interact with the lending protocol
  * It manages liquidity supply/withdrawal, collateral management, cross-chain borrowing via LayerZero, and liquidations

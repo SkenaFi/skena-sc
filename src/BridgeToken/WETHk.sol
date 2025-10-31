@@ -6,7 +6,7 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title WETHk
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Bridge token representing Wrapped ETH on non-native chains
  * @dev ERC20 token with mint/burn functionality for cross-chain operations
  * Uses 18 decimals to match WETH standard

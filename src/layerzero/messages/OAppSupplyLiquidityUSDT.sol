@@ -12,7 +12,7 @@ import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol
 
 /**
  * @title OAppSupplyLiquidityUSDT
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Omnichain Application for cross-chain liquidity supply using USDT
  * @dev Coordinates cross-chain token transfer and liquidity supply operations
  * Users send tokens from source chain to supply liquidity on destination chain

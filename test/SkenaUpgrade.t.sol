@@ -11,7 +11,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {Position} from "../src/Position.sol";
 // import {HelperUtils} from "../src/HelperUtils.sol";
 // RUN
-// z
+// forge test -vvv --match-contract SkenaUpgradeTest --match-test test_upgrade_contract
 contract SkenaUpgradeTest is Test, Helper {
     LendingPoolFactory public newImplementation;
     LendingPoolRouterDeployer public lendingPoolRouterDeployer;

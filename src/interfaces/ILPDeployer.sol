@@ -5,7 +5,7 @@ pragma solidity ^0.8.13;
  * @title ILPDeployer
  * @dev Interface for lending pool deployment functionality
  * @notice This interface defines the contract for deploying new lending pools
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 interface ILPDeployer {

@@ -10,7 +10,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 
 /**
  * @title OFTWHBARadapter
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Omnichain Fungible Token adapter for WHBAR cross-chain transfers
  * @dev Extends OFTAdapter for WHBAR with 8 decimals
  * Handles both native chain (295/Hedera) transfers and cross-chain minting/burning

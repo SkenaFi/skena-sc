@@ -8,7 +8,7 @@ import {IPosition} from "./interfaces/IPosition.sol";
 
 /**
  * @title IsHealthy
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice A contract that validates the health status of lending positions
  * @dev This contract checks if a user's position is healthy by comparing
  *      the total collateral value against the borrowed amount and LTV ratio

@@ -10,7 +10,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 
 /**
  * @title OFTUSDTadapter
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Omnichain Fungible Token adapter for USDT cross-chain transfers
  * @dev Extends OFTAdapter for USDT with 6 decimals
  * Handles both native chain (295/Hedera) transfers and cross-chain minting/burning

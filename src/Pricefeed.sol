@@ -7,7 +7,7 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
  * @title Pricefeed
  * @dev Mock price feed contract for testing purposes
  * @notice This contract simulates Chainlink-style price feed functionality
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 contract Pricefeed is Ownable {

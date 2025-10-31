@@ -15,7 +15,7 @@ import {MessagingFee} from "@layerzerolabs/oapp-evm/contracts/oapp/OApp.sol";
 
 /**
  * @title HelperUtils
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Utility contract providing helper functions for lending pool operations
  * @dev This contract provides view functions for calculating health factors, APY, exchange rates, and other metrics
  */

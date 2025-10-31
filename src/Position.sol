@@ -15,11 +15,11 @@ import {IIsHealthy} from "./interfaces/IIsHealthy.sol";
 
 /**
  * @title Position
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice A contract that manages lending positions with collateral and borrow assets
  * @dev This contract handles position management, token swapping, and collateral operations
  *
- * The Position contract represents a user's lending position in the Senja protocol.
+ * The Position contract represents a user's lending position in the Skena protocol.
  * It manages collateral assets, borrow assets, and provides functionality for:
  * - Withdrawing collateral
  * - Swapping tokens within the position
@@ -54,8 +54,8 @@ contract Position is ReentrancyGuard {
     address public lpAddress;
     uint256 public counter;
 
-    // UniSwap router address on ETH mainnet
-    address public constant UNISWAP_ROUTER = 0x2626664c2603336E57B271c5C0b26F421741e481;
+    // SaucerSwap router address on ETH mainnet
+    address public constant SAUCERSWAP_ROUTER = 0x2626664c2603336E57B271c5C0b26F421741e481;
 
     // Track if we're in a withdrawal operation to avoid auto-wrapping
     bool private _withdrawing;
@@ -166,14 +166,14 @@ contract Position is ReentrancyGuard {
     }
 
     /**
-     * @notice Swaps tokens within the position using UniSwap
+     * @notice Swaps tokens within the position using SaucerSwap
      * @param _tokenIn The address of the input token
      * @param _tokenOut The address of the output token
      * @param amountIn The amount of input tokens to swap
      * @param slippageTolerance The slippage tolerance in basis points (e.g., 500 = 5%)
      * @return amountOut The amount of output tokens received
      * @dev Only the position owner can call this function
-     * @dev Uses UniSwap router for token swapping with slippage protection
+     * @dev Uses SaucerSwap router for token swapping with slippage protection
      */
     function swapTokenByPosition(address _tokenIn, address _tokenOut, uint256 amountIn, uint256 slippageTolerance)
         public
@@ -192,8 +192,8 @@ contract Position is ReentrancyGuard {
         if (msg.sender != owner && msg.sender != lpAddress) revert NotForSwap();
         if (slippageTolerance > 10000) revert InvalidParameter(); // Max 100% slippage
 
-        // Perform UniSwap with slippage protection
-        amountOut = _performUniSwap(_tokenIn, _tokenOut, amountIn, slippageTolerance);
+        // Perform SaucerSwap with slippage protection
+        amountOut = _performSaucerSwap(_tokenIn, _tokenOut, amountIn, slippageTolerance);
 
         emit SwapTokenByPosition(msg.sender, _tokenIn, _tokenOut, amountIn, amountOut);
     }
@@ -338,36 +338,36 @@ contract Position is ReentrancyGuard {
     }
 
     /**
-     * @notice Internal function to perform token swap using UniSwap
+     * @notice Internal function to perform token swap using SaucerSwap
      * @param _tokenIn The address of the input token
      * @param _tokenOut The address of the output token
      * @param amountIn The amount of input tokens to swap
      * @param slippageTolerance The slippage tolerance in basis points
      * @return amountOut The amount of output tokens received
-     * @dev Uses UniSwap router for token swapping with slippage protection
+     * @dev Uses SaucerSwap router for token swapping with slippage protection
      */
-    function _performUniSwap(address _tokenIn, address _tokenOut, uint256 amountIn, uint256 slippageTolerance)
+    function _performSaucerSwap(address _tokenIn, address _tokenOut, uint256 amountIn, uint256 slippageTolerance)
         internal
         returns (uint256 amountOut)
     {
-        // Perform swap with UniSwap
-        amountOut = _attemptUniSwap(_tokenIn, _tokenOut, amountIn, slippageTolerance);
+        // Perform swap with SaucerSwap
+        amountOut = _attemptSaucerSwap(_tokenIn, _tokenOut, amountIn, slippageTolerance);
     }
 
     /**
-     * @notice Performs UniSwap with slippage protection
+     * @notice Performs SaucerSwap with slippage protection
      * @param _tokenIn The address of the input token
      * @param _tokenOut The address of the output token
      * @param amountIn The amount of input tokens to swap
      * @param slippageTolerance The slippage tolerance in basis points
      * @return amountOut The amount of output tokens received
      */
-    function _attemptUniSwap(address _tokenIn, address _tokenOut, uint256 amountIn, uint256 slippageTolerance)
+    function _attemptSaucerSwap(address _tokenIn, address _tokenOut, uint256 amountIn, uint256 slippageTolerance)
         internal
         returns (uint256 amountOut)
     {
-        // UniSwap router address
-        address uniSwapRouter = UNISWAP_ROUTER;
+        // SaucerSwap router address
+        address saucerSwapRouter = SAUCERSWAP_ROUTER;
 
         // Calculate expected amount using price feeds
         uint256 expectedAmount = _calculateExpectedAmount(_tokenIn, _tokenOut, amountIn);
@@ -375,8 +375,8 @@ contract Position is ReentrancyGuard {
         // Calculate minimum amount out with slippage protection
         uint256 amountOutMinimum = expectedAmount * (10000 - slippageTolerance) / 10000;
 
-        // Approve UniSwap router to spend tokens
-        IERC20(_tokenIn).approve(uniSwapRouter, amountIn);
+        // Approve SaucerSwap router to spend tokens
+        IERC20(_tokenIn).approve(saucerSwapRouter, amountIn);
 
         // Prepare swap parameters
         ISwap.ExactInputSingleParams memory params = ISwap.ExactInputSingleParams({
@@ -390,7 +390,7 @@ contract Position is ReentrancyGuard {
         });
 
         // Perform the swap
-        amountOut = ISwap(uniSwapRouter).exactInputSingle(params);
+        amountOut = ISwap(saucerSwapRouter).exactInputSingle(params);
     }
 
     /**

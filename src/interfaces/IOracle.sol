@@ -5,7 +5,7 @@ pragma solidity ^0.8.13;
  * @title IOracle
  * @dev Interface for price oracle functionality
  * @notice This interface defines the contract for price feeds and token calculations
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 interface IOracle {

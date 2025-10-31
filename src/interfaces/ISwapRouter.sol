@@ -3,9 +3,9 @@ pragma solidity ^0.8.13;
 
 /**
  * @title ISwapRouter
- * @dev Interface for Uniswap V3 swap router functionality
+ * @dev Interface for SaucerSwap V1 swap router functionality
  * @notice This interface defines the contract for token swapping operations
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 interface ISwapRouter {

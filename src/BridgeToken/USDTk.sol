@@ -6,7 +6,7 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title USDTk
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Bridge token representing USDT on non-native chains
  * @dev ERC20 token with mint/burn functionality for cross-chain operations
  * Uses 6 decimals to match USDT standard

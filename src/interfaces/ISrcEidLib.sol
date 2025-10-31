@@ -3,7 +3,7 @@ pragma solidity ^0.8.28;
 
 /**
  * @title ISrcEidLib
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Interface for managing source endpoint ID information in LayerZero
  * @dev Stores decimal information for different chain endpoints
  */

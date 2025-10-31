@@ -8,7 +8,7 @@ import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol
 
 /**
  * @title ElevatedMinterBurner
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Contract for managing minting and burning operations with elevated permissions
  * @dev Used by OFT adapters for cross-chain token operations
  * Only authorized operators can mint or burn tokens

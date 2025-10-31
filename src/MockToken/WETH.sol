@@ -5,7 +5,7 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /**
  * @title WETH
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Mock WETH token for testing purposes
  * @dev Simple ERC20 token with public mint/burn functions for testing
  * Uses 18 decimals to match real WETH

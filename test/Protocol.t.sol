@@ -31,7 +31,7 @@ contract ProtocolTest is Test {
     uint256 public constant MIN_OUTPUT = 1 * 10 ** 18; // 1 WETH (18 decimals)
 
     function setUp() public {
-        // Fork Base mainnet to get real token contracts and UniSwap
+        // Fork Base mainnet to get real token contracts and SaucerSwap
         vm.createSelectFork("base_mainnet");
 
         // Deploy protocol contract
@@ -56,7 +56,7 @@ contract ProtocolTest is Test {
     function testProtocolConstants() public view {
         // Test that constants are set correctly
         assertEq(protocol.WETH(), 0x4200000000000000000000000000000000000006);
-        assertEq(protocol.UNISWAP_ROUTER(), 0x2626664c2603336E57B271c5C0b26F421741e481);
+        assertEq(protocol.SAUCERSWAP_ROUTER(), 0x2626664c2603336E57B271c5C0b26F421741e481);
     }
 
     // RUN
@@ -197,7 +197,7 @@ contract ProtocolTest is Test {
 
     function testExecuteBuybackWithRealTokenSimulation() public {
         // For this test, we'll simulate having real USDT by using vm.etch to modify the USDT contract
-        // This is more complex but tests the actual UniSwap integration
+        // This is more complex but tests the actual SaucerSwap integration
 
         uint256 testAmount = 100 * 10 ** 6; // 100 USDT
 
@@ -217,7 +217,7 @@ contract ProtocolTest is Test {
             // If protocol somehow has USDT, test the actual swap
             console.log("Protocol has sufficient USDT, testing real swap");
 
-            // This would test the actual UniSwap integration
+            // This would test the actual SaucerSwap integration
             // Note: This might fail due to liquidity or other factors
             try protocol.executeBuyback(USDT, testAmount, MIN_OUTPUT, 3000, block.timestamp + 3600) {
                 console.log("Real buyback succeeded!");
@@ -249,7 +249,7 @@ contract ProtocolTest is Test {
 
     function testExecuteBuybackWithSimulatedUSDTBalance() public {
         // This test simulates giving the protocol USDT balance using vm.deal
-        // to test the actual buyback functionality with real UniSwap
+        // to test the actual buyback functionality with real SaucerSwap
 
         uint256 testAmount = 1000 * 10 ** 6; // 1000 USDT
         address bob = address(0x5678);
@@ -302,11 +302,11 @@ contract ProtocolTest is Test {
             );
         } catch Error(string memory reason) {
             console.log("Buyback failed with reason:", reason);
-            // This might fail due to UniSwap liquidity or other factors
+            // This might fail due to SaucerSwap liquidity or other factors
             // But we've tested that the protocol can detect and use the USDT balance
         } catch {
             console.log("Buyback failed with unknown error");
-            // This might fail due to UniSwap liquidity or other factors
+            // This might fail due to SaucerSwap liquidity or other factors
         }
     }
 }

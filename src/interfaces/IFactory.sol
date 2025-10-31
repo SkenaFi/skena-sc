@@ -5,7 +5,7 @@ pragma solidity ^0.8.13;
  * @title IFactory
  * @dev Interface for lending pool factory functionality
  * @notice This interface defines the contract for creating and managing lending pools
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 interface IFactory {

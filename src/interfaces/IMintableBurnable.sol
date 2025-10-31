@@ -3,7 +3,7 @@ pragma solidity ^0.8.22;
 
 /**
  * @title IMintableBurnable
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Interface for tokens that can be minted and burned
  * @dev Used for tokens that require mint/burn functionality for cross-chain operations
  */

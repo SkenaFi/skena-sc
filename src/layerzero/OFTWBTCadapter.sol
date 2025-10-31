@@ -10,7 +10,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 
 /**
  * @title OFTWBTCadapter
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Omnichain Fungible Token adapter for WBTC cross-chain transfers
  * @dev Extends OFTAdapter for WBTC with 8 decimals
  * Handles both native chain (295/Hedera) transfers and cross-chain minting/burning

@@ -12,7 +12,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 
 /**
  * @title OAppAdapter
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Adapter for coordinating cross-chain token transfers and liquidity operations
  * @dev Combines OFT token bridging with OApp messaging for liquidity supply operations
  */

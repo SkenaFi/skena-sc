@@ -14,7 +14,7 @@ import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol
 
 /**
  * @title OAppRepayDebtUSDT
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Omnichain Application for cross-chain debt repayment using USDT
  * @dev Coordinates cross-chain token transfer and debt repayment operations
  * Users send tokens from source chain to repay debt on destination chain

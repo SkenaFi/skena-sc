@@ -14,15 +14,15 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title Liquidator
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice A contract that handles liquidation of unhealthy lending positions
  * @dev This contract provides both DEX and MEV liquidation options
  */
 contract Liquidator is ReentrancyGuard, Ownable {
     using SafeERC20 for IERC20;
 
-    // UniSwap router address on Base mainnet
-    address public constant UNISWAP_ROUTER = 0x2626664c2603336E57B271c5C0b26F421741e481;
+    // SaucerSwap router address on Base mainnet
+    address public constant SAUCERSWAP_ROUTER = 0x2626664c2603336E57B271c5C0b26F421741e481;
 
     error NotLiquidatable();
     error LiquidationFailed();
@@ -54,7 +54,7 @@ contract Liquidator is ReentrancyGuard, Ownable {
     }
 
     /**
-     * @notice Liquidates a position using DEX (UniSwap)
+     * @notice Liquidates a position using DEX (SaucerSwap)
      * @param borrower The address of the borrower to liquidate
      * @param lendingPoolRouter The address of the lending pool router
      * @param liquidationIncentive The liquidation incentive in basis points (e.g., 500 = 5%)
@@ -257,7 +257,7 @@ contract Liquidator is ReentrancyGuard, Ownable {
         IPosition(borrowerPosition).withdrawCollateral(collateralToLiquidate, address(this), false);
 
         // Swap collateral to borrow token
-        uint256 amountOut = _performUniSwap(
+        uint256 amountOut = _performSaucerSwap(
             effectiveCollateralToken,
             borrowToken == address(1) ? _WETH() : borrowToken,
             collateralToLiquidate,
@@ -334,9 +334,9 @@ contract Liquidator is ReentrancyGuard, Ownable {
     }
 
     /**
-     * @notice Performs token swap using UniSwap
+     * @notice Performs token swap using SaucerSwap
      */
-    function _performUniSwap(address _tokenIn, address _tokenOut, uint256 amountIn, uint256 slippageTolerance)
+    function _performSaucerSwap(address _tokenIn, address _tokenOut, uint256 amountIn, uint256 slippageTolerance)
         internal
         returns (uint256 amountOut)
     {
@@ -344,8 +344,8 @@ contract Liquidator is ReentrancyGuard, Ownable {
         uint256 expectedAmount = _calculateExpectedAmount(_tokenIn, _tokenOut, amountIn);
         uint256 amountOutMinimum = expectedAmount * (10000 - slippageTolerance) / 10000;
 
-        // Approve UniSwap router
-        IERC20(_tokenIn).approve(UNISWAP_ROUTER, amountIn);
+        // Approve SaucerSwap router
+        IERC20(_tokenIn).approve(SAUCERSWAP_ROUTER, amountIn);
 
         // Prepare swap parameters
         ISwap.ExactInputSingleParams memory params = ISwap.ExactInputSingleParams({
@@ -359,7 +359,7 @@ contract Liquidator is ReentrancyGuard, Ownable {
         });
 
         // Perform the swap
-        amountOut = ISwap(UNISWAP_ROUTER).exactInputSingle(params);
+        amountOut = ISwap(SAUCERSWAP_ROUTER).exactInputSingle(params);
     }
 
     /**

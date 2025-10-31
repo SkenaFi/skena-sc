@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 /**
  * @title ILPRouterDeployer
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Interface for deploying new LendingPoolRouter contracts
  * @dev This interface defines the deployment functionality for lending pool routers
  */

@@ -12,7 +12,7 @@ import {ISwap} from "./interfaces/ISwap.sol";
  * @title Protocol
  * @dev Protocol contract for managing protocol fees and withdrawals
  * @notice This contract handles protocol-level operations including fee collection and withdrawals
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 contract Protocol is ReentrancyGuard, Ownable {
@@ -21,8 +21,8 @@ contract Protocol is ReentrancyGuard, Ownable {
     // WETH contract address on Base mainnet
     address public constant WETH = 0x4200000000000000000000000000000000000006;
 
-    // UniSwap router address on Base mainnet
-    address public constant UNISWAP_ROUTER = 0x2626664c2603336E57B271c5C0b26F421741e481;
+    // SaucerSwap router address on Base mainnet
+    address public constant SAUCERSWAP_ROUTER = 0x2626664c2603336E57B271c5C0b26F421741e481;
 
     // Buyback configuration
     uint256 public constant PROTOCOL_SHARE = 95; // 95% for protocol (locked)
@@ -168,8 +168,8 @@ contract Protocol is ReentrancyGuard, Ownable {
         uint256 protocolAmount = (amountIn * PROTOCOL_SHARE) / PERCENTAGE_DIVISOR;
         uint256 ownerAmount = amountIn - protocolAmount; // Remaining amount for owner
 
-        // Approve UniSwap router to spend tokens
-        IERC20(tokenIn).approve(UNISWAP_ROUTER, amountIn);
+        // Approve SaucerSwap router to spend tokens
+        IERC20(tokenIn).approve(SAUCERSWAP_ROUTER, amountIn);
 
         // Prepare swap parameters for protocol share
         ISwap.ExactInputSingleParams memory params = ISwap.ExactInputSingleParams({
@@ -184,7 +184,7 @@ contract Protocol is ReentrancyGuard, Ownable {
 
         // Execute swap for protocol share
         uint256 protocolWethReceived;
-        try ISwap(UNISWAP_ROUTER).exactInputSingle(params) returns (uint256 _amountOut) {
+        try ISwap(SAUCERSWAP_ROUTER).exactInputSingle(params) returns (uint256 _amountOut) {
             protocolWethReceived = _amountOut;
         } catch {
             revert SwapFailed(tokenIn, WETH, protocolAmount);
@@ -201,7 +201,7 @@ contract Protocol is ReentrancyGuard, Ownable {
             params.recipient = owner();
             params.amountOutMinimum = (amountOutMinimum * OWNER_SHARE) / PERCENTAGE_DIVISOR;
 
-            try ISwap(UNISWAP_ROUTER).exactInputSingle(params) returns (uint256 _amountOut) {
+            try ISwap(SAUCERSWAP_ROUTER).exactInputSingle(params) returns (uint256 _amountOut) {
                 ownerWethReceived = _amountOut;
                 ownerAvailableBalance[WETH] += ownerWethReceived;
             } catch {

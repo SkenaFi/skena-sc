@@ -19,7 +19,7 @@ import {OptionsBuilder} from "@layerzerolabs/oapp-evm/contracts/oapp/libs/Option
 import {MyOApp} from "../../src/layerzero/MyOApp.sol";
 import {WHBAR} from "../../src/MockToken/WHBAR.sol";
 
-contract DevSenja is Script, Helper {
+contract DevSkena is Script, Helper {
     using OptionsBuilder for bytes;
 
     USDC public mockUSDC;
@@ -287,7 +287,7 @@ contract DevSenja is Script, Helper {
 }
 
 // RUN
-// forge script DevSenja --broadcast -vvv --verify --verifier etherscan --etherscan-api-key $ETHERSCAN_API_KEY
-// forge script DevSenja --broadcast -vvv --verify --verifier sourcify --verifier-url https://server-verify.hashscan.io
-// forge script DevSenja --broadcast -vvv
-// forge script DevSenja -vvv
+// forge script DevSkena --broadcast -vvv --verify --verifier etherscan --etherscan-api-key $ETHERSCAN_API_KEY
+// forge script DevSkena --broadcast -vvv --verify --verifier sourcify --verifier-url https://server-verify.hashscan.io
+// forge script DevSkena --broadcast -vvv
+// forge script DevSkena -vvv

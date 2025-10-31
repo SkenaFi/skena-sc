@@ -5,7 +5,7 @@ pragma solidity ^0.8.13;
  * @title IIsHealthy
  * @dev Interface for health check functionality in lending pools
  * @notice This interface defines the contract for checking the health status of lending positions
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 interface IIsHealthy {
@@ -61,7 +61,7 @@ interface IIsHealthy {
     ) external view returns (bool isLiquidatable, uint256 borrowValue, uint256 collateralValue);
 
     /**
-     * @dev Liquidates a position using DEX (UniSwap)
+     * @dev Liquidates a position using DEX (SaucerSwap)
      * @param borrower The address of the borrower to liquidate
      * @param lendingPoolRouter The address of the lending pool router
      * @param factory The address of the factory

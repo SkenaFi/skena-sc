@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 /**
  * @title ILPRouter
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Interface for the Lending Pool Router that manages pool state and operations
  * @dev This interface defines the core routing logic for lending pool operations
  */

@@ -12,7 +12,7 @@ import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/Cont
 
 /**
  * @title LendingPoolFactory
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Factory contract for creating and managing lending pools
  * @dev This contract serves as the main entry point for creating new lending pools.
  * It maintains a registry of all created pools and manages token data streams

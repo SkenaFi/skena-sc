@@ -5,7 +5,7 @@ pragma solidity ^0.8.13;
  * @title IPosition
  * @dev Interface for position management functionality
  * @notice This interface defines the contract for managing user positions and trading operations
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 interface IPosition {

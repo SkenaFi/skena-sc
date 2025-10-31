@@ -6,7 +6,7 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title LendingPoolRouterDeployer
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Deploys new LendingPoolRouter contracts for the protocol
  * @dev Factory contract uses this deployer to create router instances
  */

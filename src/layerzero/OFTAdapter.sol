@@ -10,7 +10,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 
 /**
  * @title OFTadapter
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Omnichain Fungible Token adapter for cross-chain token transfers using LayerZero
  * @dev This contract wraps existing tokens to enable cross-chain transfers
  * Handles both native chain (8453/Base) transfers and cross-chain minting/burning

@@ -5,12 +5,12 @@ pragma solidity ^0.8.13;
  * @title ILiquidator
  * @dev Interface for liquidation functionality
  * @notice This interface defines the contract for liquidating unhealthy positions
- * @author Senja Team
+ * @author Skena Team
  * @custom:version 1.0.0
  */
 interface ILiquidator {
     /**
-     * @dev Liquidates a position using DEX (UniSwap)
+     * @dev Liquidates a position using DEX (SaucerSwap)
      * @param borrower The address of the borrower to liquidate
      * @param lendingPoolRouter The address of the lending pool router
      * @param factory The address of the factory

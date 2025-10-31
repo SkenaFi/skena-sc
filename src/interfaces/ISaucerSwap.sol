@@ -2,14 +2,14 @@
 pragma solidity ^0.8.13;
 
 /**
- * @title IDragonSwap
- * @dev Interface for DragonSwap router functionality
- * @notice This interface defines the contract for token swapping operations on DragonSwap
- * @author Senja Team
- * @custom:security-contact security@senja.com
+ * @title ISaucerSwap
+ * @dev Interface for SaucerSwap router functionality
+ * @notice This interface defines the contract for token swapping operations on SaucerSwap
+ * @author Skena Team
+ * @custom:security-contact security@skena.com
  * @custom:version 1.0.0
  */
-interface IDragonSwap {
+interface ISaucerSwap {
     /**
      * @dev Parameters for exact input single token swap
      * @param tokenIn Address of the input token
@@ -41,3 +41,4 @@ interface IDragonSwap {
      */
     function exactInputSingle(ExactInputSingleParams calldata params) external payable returns (uint256 amountOut);
 }
+

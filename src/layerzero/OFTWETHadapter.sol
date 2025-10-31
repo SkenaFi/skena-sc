@@ -10,7 +10,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 
 /**
  * @title OFTWETHadapter
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Omnichain Fungible Token adapter for WETH cross-chain transfers
  * @dev Extends OFTAdapter for WETH with 18 decimals
  * Handles both native chain (8453/Base) transfers and cross-chain minting/burning

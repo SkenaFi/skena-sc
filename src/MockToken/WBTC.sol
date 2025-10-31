@@ -5,7 +5,7 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /**
  * @title WBTC
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Mock WBTC token for testing purposes
  * @dev Simple ERC20 token with public mint/burn functions for testing
  * Uses 8 decimals to match real WBTC

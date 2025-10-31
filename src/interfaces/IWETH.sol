@@ -5,7 +5,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
  * @title IWETH
- * @author Senja Protocol
+ * @author Skena Protocol
  * @notice Interface for Wrapped ETH (WETH) token functionality
  * @dev Extends IERC20 with deposit and withdraw functions
  */
